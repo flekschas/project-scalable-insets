@@ -42,7 +42,7 @@
       <p class="abstract larger m-b-2">Scalable Insets is a new technique for interactively exploring and navigating large numbers of annotated patterns in multiscale visual spaces such as gigapixel images, matrices, or maps. Our technique visualizes annotated patterns too small to be identifiable at certain zoom levels using insets, i.e., magnified thumbnail views of the patterns. Insets are dynamically placed either within the viewport or along the boundary of the viewport to offer a compromise between locality and context preservation. Annotated patterns are interactively clustered by location and type. They are visually represented as an aggregated inset to provide scalable exploration within a single viewport.</p>
 
       <!--------------------------------- NEWS -------------------------------->
-      <h3 id="news" class="iconized underlined anchored">
+<!--       <h3 id="news" class="iconized underlined anchored">
         <a href="#news" class="hidden-anchor">
           <svg class="icon">
             <use
@@ -75,7 +75,7 @@
             IEEE VIS
           </div>
         </li>
-      </ol>
+      </ol> -->
 
       <!------------------------------ SCREENCAST ----------------------------->
       <h3 id="screencast" class="iconized underlined anchored">
@@ -95,7 +95,7 @@
       </h3>
       <div id="youtube" class="video">
         <iframe
-          src="https://www.youtube.com/embed/WpbBoW2f4iM?rel=0&amp;showinfo=0"
+          src="https://www.youtube.com/embed/7Bn4mNLl3WQ?rel=0&amp;showinfo=0"
           frameborder="0"
           allowfullscreen>
         </iframe>
@@ -120,6 +120,11 @@
 
       <section class="text">
         <figure id="fig-naive-approaches">
+          <img
+            class="zoomable"
+            src="images/naive-approaches.jpg"
+            alt="Fig. 1: Exploration behavior of different user roles."
+          >
           <figcaption>Fig. 1: Exploration behavior of different user roles.</figcaption>
         </figure>
 
@@ -128,12 +133,22 @@
         </p>
 
         <figure id="fig-technique">
+          <img
+            class="zoomable"
+            src="images/technique.jpg"
+            alt="Fig. 2: The Scalable Insets technique"
+          >
           <figcaption>Fig. 2: The Scalable Insets technique</figcaption>
         </figure>
 
         <p class=""><strong>What?</strong>  Biological data sets consists of experimental data and metadata describing the studies, properties of the analyzed biological samples, and attributes of individual data files. In this context, a data set is a collection of data files, along with the metadata  (<a href="#fig-overview">Fig. 2</a>). Additionally, metadata is partially annotated with ontology terms. An ontology describes a certain domain (e.g. <em>human anatomy</em>), defines controlled vocabularies for its concepts and relationships (e.g., <em>kidney</em> and <em>is-part-of</em>) and relates concepts with each other (e.g., <em>nephron is-part-of kidney</em>). By means of ontology terms, sets of annotated data sets can be classified hierarchically. <abbr title="Semantic Annotation Tool and Ontological Relations Interface">SATORI</abbr> extracts free-text and ontologically annotated metadata  (<a href="#fig-overview">Fig. 2</a>). The free-text metadata is indexed in a text-based search system. Additionally, data set-related ontology classes are parsed and visualized to provide semantic context to data sets. Since <abbr title="Semantic Annotation Tool and Ontological Relations Interface">SATORI</abbr>'s goal is to support exploration rather than to visualize ontologies themselves, only a relevant subtree of the ontologies is shown, i.e., effectively enforcing a strict containment hierarchy (<a href="#fig-ontology">Fig. 3</a>).</p>
 
         <figure id="fig-design">
+          <img
+            class="zoomable"
+            src="images/design.jpg"
+            alt="Fig. 3: Design of Scalable Insets"
+          >
           <figcaption>Fig. 3: Design of Scalable Insets</figcaption>
         </figure>
 
@@ -440,7 +455,5 @@
       </div>
     </footer>
   </div>
-
-  <script src="index.js"></script>
 </body>
 </html>
