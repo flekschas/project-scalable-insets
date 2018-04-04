@@ -1,14 +1,14 @@
 {
-  "name": "template",
+  "name": "scalable-insets",
   "version": "0.1.0",
-  "description": "Template",
+  "description": "Scalable Insets project page",
   "private": true,
   "author": "Fritz Lekschas",
   "license": "MIT",
   "contributors": [
     {
       "name": "Fritz Lekschas",
-      "url": "http://github.com/flekschas"
+      "url": "https://github.com/flekschas"
     }
   ],
   "devDependencies": {
