@@ -145,8 +145,12 @@ b, strong {
   opacity: 1;
 }
 
+figure > img {
+  max-width: 100%;
+}
+
 figcaption {
-    font-size: 0.85em;
+    font-size: 0.9em;
 }
 
 section.text {
@@ -192,7 +196,6 @@ section.text {
 
 .content-wrapper {
   position: relative;
-  z-index: 3;
   background: $white;
   box-shadow: 0 -1px 2rem 0 rgba(0, 0, 0, 0.1),
               0 -1px 6px 0 rgba(0, 0, 0, 0.1),
@@ -797,24 +800,6 @@ ul.iconized {
   background-size: cover;
 }
 
-#fig-naive-approaches {
-  @include ratio(2031, 487);
-  background: url(images/naive-approaches.jpg) no-repeat center center;
-  background-size: cover;
-}
-
-#fig-technique {
-  @include ratio(1669, 1258);
-  background: url(images/technique.jpg) no-repeat center center;
-  background-size: cover;
-}
-
-#fig-design {
-  @include ratio(1545, 750);
-  background: url(images/design.jpg) no-repeat center center;
-  background-size: cover;
-}
-
 #authors-list h4 + p {
   margin-top: -0.25rem;
 }
@@ -869,7 +854,7 @@ ul.iconized {
 }
 
 #youtube {
-  @include ratio(3360, 2100);
+  @include ratio(3840, 2145);
 }
 
 /*
