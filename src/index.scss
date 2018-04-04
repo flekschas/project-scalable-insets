@@ -16,7 +16,7 @@ body {
 
 body {
   background: $white;
-  color: $gray-dark;
+  color: $black;
   font-size: 16px;
   font-fammily: sans-serif;
   font-weight: 300;
@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3 {
-  color: $gray-darker;
+  color: $black;
   margin: 4rem 0 0.5rem 0;
 }
 
@@ -40,19 +40,13 @@ h1, h2, h3, h4, h5, h6, p, li {
 }
 
 h1 {
+  position: relative;
+  z-index: 2;
   font-size: 3rem;
   margin: 0;
   text-transform: uppercase;
-  color: transparentize($primary, 0.075);
+  color: $black;
   line-height: 1;
-
-  .logo {
-    float: left;
-    width: 2.5rem;
-    height: 3rem;
-    padding-right: 0.5rem;
-    color: transparentize(lighten(desaturate($primary, 33%), 50%), 0.1);
-  }
 }
 
 h2 {
@@ -91,15 +85,20 @@ p {
 }
 
 a {
+  margin: 0 -.125em;
+  padding: 0 .125em;
   color: inherit;
   text-decoration: none;
-  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.25);
-  transition: all $fast $ease;
+  border-radius: 0;
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+  transition: color $fast $ease, background $fast $ease;
 }
 
 a:hover {
-  color: $black;
-  box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 1);
+  color: $white;
+  background: $primary;
+  border-radius: 0.125em;
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0);
 }
 
 a:focus {
@@ -130,17 +129,20 @@ b, strong {
 
 ::-webkit-selection {
   color: $white;
-  background: $secondary;
+  background: $black;
+  opacity: 1;
 }
 
 ::-moz-selection {
   color: $white;
-  background: $secondary;
+  background: $black;
+  opacity: 1;
 }
 
 ::selection {
   color: $white;
-  background: $secondary;
+  background: $black;
+  opacity: 1;
 }
 
 figcaption {
@@ -197,8 +199,8 @@ section.text {
               inset 0 1px 0 0 rgba(0, 0, 0, 0.2);
 }
 
-.blue {
-  color: $primary;
+.primary-text {
+  color: $primary-dark;
 }
 
 .centered {
@@ -215,8 +217,14 @@ svg.centered {
   margin: 0 1rem;
 }
 
+.fullscreen {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
 .abstract {
-  text-align: justify;
+  font-size: 1.25em;
+  color: $black;
 }
 
 .hidden-anchor {
@@ -246,6 +254,8 @@ h3:target .hidden-anchor {
 
 .hidden-anchor:hover,
 h3:target .hidden-anchor {
+  color: $primary;
+  background: transparent;
   opacity: 1;
 }
 
@@ -413,24 +423,20 @@ ul.iconized {
   vertical-align: center;
 }
 
-.icon-new {
-  color: $ternary;
-}
-
 .inline-list li {
   display: inline;
 }
 
 // Also known as `social-links`. But anything containing `social` will be
 // removed by adblockers.
-.remix-links {
-  font-size: 0.85em;
+.remix-links,
+.date {
+  font-size: 0.9em;
 }
 
 .date {
   display: block;
-  font-size: 0.85em;
-  color: $gray-medium;
+  color: $gray-dark;
 }
 
 .two-authors li:first-child:after {
@@ -451,8 +457,17 @@ ul.iconized {
   }
 }
 
+.reference .title {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.reference .authors {
+  margin-bottom: 0.125rem;
+}
+
 .reference .secondary-information {
-  font-size: 0.85em;
+  font-size: 0.9em;
 }
 
 .btn {
@@ -548,9 +563,255 @@ ul.iconized {
  * -----------------------------------------------------------------------------
  */
 
+#app-name {
+  position: relative;
+}
+
+#app-name-text {
+  position: relative;
+  z-index: 2;
+  margin: 0 -0.125em;
+  padding: 0 0.125em;
+  animation-name: intro-effect;
+  animation-duration: $slow;
+  animation-timing-function: $ease;
+  animation-delay: 1.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  border-radius: 0.125em;
+}
+
+@keyframes intro-effect {
+  0% {
+    color: $black;
+    background-color: transparentize($primary, 1);
+  }
+  100% {
+    color: $white;
+    background-color: transparentize($primary, 0);
+  }
+}
+
+#dot1, #dot2, #dot3 {
+  position: absolute;
+  z-index: 1;
+  right: 0.5em;
+  bottom: 0.5em;
+  background: $primary;
+  transform: scale(0, 0);
+  border-radius: 0.125em;
+  animation-duration: 3.2s;
+  animation-timing-function: $ease;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#dot1 {
+  width: 0.5em;
+  height: 0.5em;
+  animation-name: intro-dot-1;
+}
+
+#dot2 {
+  width: 0.65em;
+  height: 0.65em;
+  animation-name: intro-dot-2;
+}
+
+#dot3 {
+  width: 1em;
+  height: 0.75em;
+  animation-name: intro-dot-3;
+}
+
+@keyframes intro-dot-1 {
+  0% {
+    transform: translate(0, 0) scale(0, 0);
+  }
+  14.29% {
+    transform: translate(1.5em, 0.80em) scale(1, 1);
+  }
+  28.57% {
+    transform: translate(1.55em, 0.75em);
+  }
+  42.86% {
+    transform: translate(1.52em, 0.7em);
+  }
+  57.14% {
+    transform: translate(1.51em, 0.7em);
+  }
+  71.43% {
+    transform: translate(1.18em, -0.0625em);
+  }
+  100% {
+    transform: translate(1.25em, -0.125em);
+  }
+}
+
+@keyframes intro-dot-2 {
+  0% {
+    transform: translate(0, 0) scale(0, 0);
+  }
+  14.29% {
+    transform: translate(1.4em, -0.125em) scale(1, 1);
+  }
+  28.57% {
+    transform: translate(1.35em, -0.0625em);
+  }
+  42.86% {
+    transform: translate(1.37em, 0.125em);
+  }
+  57.14% {
+    transform: translate(1.4em, 0.128em);
+  }
+  71.43% {
+    transform: translate(1.8em, 0.7em);
+  }
+  100% {
+    transform: translate(1.7em, 0.75em);
+  }
+}
+
+@keyframes intro-dot-3 {
+  0% {
+    transform: translate(0, 0) scale(0, 0);
+  }
+  14.29% {
+    transform: translate(0.75em, 1.35em) scale(1, 1);
+  }
+  28.57% {
+    transform: translate(0.7em, 1.3em);
+  }
+  42.86% {
+    transform: translate(0.9em, 1.35em);
+  }
+  100% {
+    transform: translate(0.8em, 1.42em);
+  }
+}
+
+#line1, #line2, #line3 {
+  position: absolute;
+  z-index: 0;
+  right: 0.5em;
+  bottom: 0.5em;
+  height: 0.1em;
+  background: $primary;
+  transform: scale(0, 0);
+  transform-origin: center left;
+  animation-duration: 3.2s;
+  animation-timing-function: $ease;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#line1 {
+  right: -0.7em;
+  width: 1.2em;
+  animation-name: intro-line-1;
+}
+
+#line2 {
+  right: -0.8em;
+  width: 1.3em;
+  animation-name: intro-line-2;
+}
+
+#line3 {
+  right: -.75em;
+  width: 1.25em;
+  animation-name: intro-line-3;
+}
+
+@keyframes intro-line-1 {
+  0% {
+    transform: rotate(28deg) scale(0, 0);
+  }
+  14.29% {
+    transform: rotate(28deg) scale(1, 1);
+  }
+  28.57% {
+    transform: rotate(25deg) scale(1, 1);
+  }
+  42.86% {
+    transform: rotate(23deg);
+  }
+  57.14% {
+    transform: rotate(23deg);
+  }
+  71.43% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(-18deg);
+  }
+}
+
+@keyframes intro-line-2 {
+  0% {
+    transform: rotate(-20deg) scale(0, 0);
+  }
+  14.29% {
+    transform: rotate(-20deg) scale(0.8, 1);
+  }
+  28.57% {
+    transform: rotate(-18deg) scale(1, 1);
+  }
+  42.86% {
+    transform: rotate(-5deg);
+  }
+  57.14% {
+    transform: rotate(-4deg);
+  }
+  71.43% {
+    transform: rotate(18deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes intro-line-3 {
+  0% {
+    transform: rotate(75deg) scale(0, 0);
+  }
+  14.29% {
+    transform: rotate(75deg) scale(0.8, 1);
+  }
+  28.57% {
+    transform: rotate(78deg) scale(1, 1);;
+  }
+  42.86% {
+    transform: rotate(65deg);
+  }
+  100% {
+    transform: rotate(73deg);
+  }
+}
+
 #fig-teaser {
-  @include ratio(2520, 1324);
-  background: url(images/test.png) no-repeat center center;
+  @include ratio(1908, 921);
+  background: url(images/teaser.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+#fig-naive-approaches {
+  @include ratio(2031, 487);
+  background: url(images/naive-approaches.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+#fig-technique {
+  @include ratio(1669, 1258);
+  background: url(images/technique.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+#fig-design {
+  @include ratio(1545, 750);
+  background: url(images/design.jpg) no-repeat center center;
   background-size: cover;
 }
 
@@ -562,38 +823,48 @@ ul.iconized {
   margin-top: 1rem;
   padding: 2rem 0;
   font-size: 0.85em;
-  color: $white;
-  background: $primary;
-  box-shadow: inset 0 6rem 6rem -6rem rgba(0, 0, 0, 0.66);
+  color: $gray-medium;
+  background: $gray-lighter;
 
   a {
-    box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.125);
   }
 
   a:hover {
-    color: $white;
-    box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 1);
+    box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0);
+  }
+
+  .vcg-name {
+
+    font-family: 'Open Sans Condensed';
+    text-align: right;
+    line-height: 1.125em;
   }
 
   .logo-hms,
-  .logo-dbmi {
-    color: $white;
+  .logo-seas,
+  .logo-vcg {
     height: 2em;
+    background-size: cover;
   }
 
   .logo-hms {
-    width: 10em;  /* 4 (w) : 1 (h) */
-    height: 2.5em;
+    width: 5.75em;  /* 4 (w) : 1 (h) */
+    height: 5em;
   }
 
-  .logo-dbmi {
-    width: 8.25em; /* 3.3 (w) : 1 (h) */
-    height: 2.5em;
+  .logo-seas {
+    width: 5.75em; /* 3.3 (w) : 1 (h) */
+    height: 5em;
+  }
+
+  .logo-vcg {
+    width: 5em; /* 3.3 (w) : 1 (h) */
+    height: 4.25em;
   }
 
   .copyright {
-    color: transparentize($white, 0.5);
-    font-size: 0.85em;
+    font-size: 0.9em;
   }
 }
 
@@ -612,11 +883,6 @@ ul.iconized {
   h1 {
     font-size: 4rem;
     line-height: 1.5;
-
-    .logo {
-      width: 3rem;
-      height: 6rem;
-    }
   }
 
   h1 + h2 {
@@ -628,11 +894,6 @@ ul.iconized {
 @media screen and (min-width: 35.5em) {
   h1 {
     font-size: 6rem;
-
-    .logo {
-      width: 4.5rem;
-      height: 9rem;
-    }
   }
 
   h1 + h2 {
@@ -644,12 +905,6 @@ ul.iconized {
 @media screen and (min-width: 40em) {
   h1 {
     font-size: 7rem;
-
-    .logo {
-      width: 5rem;
-      height: 10.5rem;
-      padding-right: 1rem;
-    }
   }
 
   h1 + h2 {
@@ -661,6 +916,11 @@ ul.iconized {
     margin-right: 8.3334%;
   }
 
+  .fullscreen {
+    margin-left: -10%;  /* 1/12 */
+    margin-right: -10%;
+  }
+
   .video {
     width: 90%;
   }
@@ -668,18 +928,8 @@ ul.iconized {
 
 /* 960px */
 @media screen and (min-width: 60em) {
-  body {
-    font-size: 20px;
-  }
-
   h1 {
-    font-size: 9rem;
-
-    .logo {
-      width: 6rem;
-      height: 13.5rem;
-      margin-left: -7rem;
-    }
+    font-size: 4rem;
   }
 
   h1 + h2 {
@@ -691,71 +941,46 @@ ul.iconized {
     margin-right: 11.1112%;
   }
 
+  .fullscreen {
+    margin-left: -14.2857%;  /* 1/9 */
+    margin-right: -14.2857%;
+  }
+
   .video {
     width: 80%;
-  }
-
-  .pointer {
-    font-size: 30px;
-  }
-
-  .pointer-wrapper {
-    top: -3.85rem;
   }
 }
 
 /* 1280px */
 @media screen and (min-width: 80em) {
   body {
-    font-size: 22px;
-  }
-
-  h1 {
-    .logo {
-      width: 7rem;
-      height: 13.5rem;
-      margin-left: -8rem;
-    }
+    font-size: 18px;
   }
 
   .content {
-    margin-left: 16.66667%;  /* 1/6 */
-    margin-right: 16.66667%;
+    margin-left: 16.6667%;  /* 1/6 */
+    margin-right: 16.6667%;
+  }
+
+  .fullscreen {
+    margin-left: -25%;  /* 1/6 */
+    margin-right: -25%;
   }
 
   .video {
     width: 70%;
   }
-
-  .pointer {
-    font-size: 36px;
-  }
-
-  .pointer-wrapper {
-    top: -4.25rem;
-  }
 }
 
 /* 1600px */
 @media screen and (min-width: 100em) {
-  body {
-    font-size: 24px;
-  }
-
-  .abstract {
-    font-size: 28px;
-  }
-
   .content {
     margin-left: 20%;  /* 1/5 */
     margin-right: 20%;
   }
 
-  .pointer {
-    font-size: 48px;
-  }
-
-  .pointer-wrapper {
-    top: -5rem;
+  .fullscreen {
+    margin-left: -33.3333%;  /* 1/5 */
+    margin-right: -33.3333%;
   }
 }
