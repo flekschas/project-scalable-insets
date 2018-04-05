@@ -4,6 +4,10 @@
 @import 'styles/ratio';
 @import 'styles/transitions';
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   width: 100%;
@@ -127,6 +131,11 @@ b, strong {
   font-weight: 600;
 }
 
+em {
+  font-style: italic;
+  font-weight: 400;
+}
+
 ::-webkit-selection {
   color: $white;
   background: $black;
@@ -150,28 +159,16 @@ figure > img {
 }
 
 figcaption {
-    font-size: 0.9em;
+  font-size: 0.9em;
+  line-height: 1.33em;
 }
 
 section.text {
   position: relative;
   overflow: auto;
 
-  p {
-    margin: 1.5em 0;
-
-    &:first-child,
-    &.first {
-        margin-top: 0;
-    }
-
-    &:last-child {
-        margin-bottom: 0;
-    }
-  }
-
   figure {
-    margin: 0.25em 2em;
+    margin: 2em 3em;
     padding: 0;
 
     figcaption {
@@ -233,6 +230,7 @@ svg.centered {
 .hidden-anchor {
   position: absolute;
   display: block;
+  box-sizing: content-box;
   top: 0;
   left: -2rem;
   bottom: 0;
@@ -471,7 +469,7 @@ ul.iconized {
   }
 
   .authors li:nth-last-child(2):after {
-    content: ' and ';
+    content: ', and ';
   }
 
   .authors li:last-child:after {
@@ -496,6 +494,10 @@ ul.iconized {
 
   .secondary-information {
     font-size: 0.9em;
+  }
+
+  .number {
+    margin-right: 0.5em;
   }
 }
 
@@ -584,6 +586,20 @@ ul.iconized {
 
 .journal {
   font-style: italic;
+}
+
+.columns {
+  position: relative;
+  overflow: auto;
+
+  > * {
+    margin-top: 0;
+  }
+}
+
+.column-1-2 {
+  float: left;
+  width: 100%;
 }
 
 /*
@@ -960,6 +976,18 @@ ul.iconized {
   .video {
     width: 80%;
   }
+
+  .column-1-2 {
+    width: 50%;
+  }
+
+  .text .column-1-2:first-child {
+    padding-right: 0.5rem;
+  }
+
+  .text .column-1-2:last-child {
+    padding-left: 0.5rem;
+  }
 }
 
 /* 1280px */
@@ -980,6 +1008,14 @@ ul.iconized {
 
   .video {
     width: 70%;
+  }
+
+  .text .column-1-2:first-child {
+    padding-right: 1rem;
+  }
+
+  .text .column-1-2:last-child {
+    padding-left: 1rem;
   }
 }
 
