@@ -222,6 +222,11 @@ svg.centered {
   margin-right: -1rem;
 }
 
+.large-screen {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
 .abstract {
   font-size: 1.25em;
   color: $black;
@@ -990,6 +995,11 @@ ul.iconized {
     margin-right: -14.2857%;
   }
 
+  .large-screen {
+    margin-left: -4rem;
+    margin-right: -4rem;
+  }
+
   .video {
     width: 80%;
   }
@@ -1021,6 +1031,11 @@ ul.iconized {
   .fullscreen {
     margin-left: -25%;  /* 1/6 */
     margin-right: -25%;
+  }
+
+  .large-screen {
+    margin-left: -10rem;
+    margin-right: -10rem;
   }
 
   .video {
