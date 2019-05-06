@@ -46,11 +46,11 @@ h1, h2, h3, h4, h5, h6, p, li {
 h1 {
   position: relative;
   z-index: 2;
-  font-size: 3rem;
+  font-size: 1.5rem;
   margin: 0;
   text-transform: uppercase;
   color: $black;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 h2 {
@@ -83,6 +83,7 @@ h5 {
 }
 
 p {
+  font-size: 0.95rem;
   margin: 0.5rem 0;
   padding: 0;
   text-align: justify;
@@ -185,7 +186,7 @@ section.text {
  */
 
 .larger {
-  font-size: 1.125em;
+  font-size: 1em;
 }
 
 .darker {
@@ -229,7 +230,6 @@ svg.centered {
 }
 
 .abstract {
-  font-size: 1.25em;
   color: $black;
 }
 
@@ -931,34 +931,25 @@ ul.iconized {
 /* 400px */
 @media screen and (min-width: 25em) {
   h1 {
-    font-size: 4rem;
-    line-height: 1.5;
-  }
-
-  h1 + h2 {
     font-size: 2rem;
   }
 }
 
-/* 568px (Pure.css Grid: SM) */
-@media screen and (min-width: 35.5em) {
-  h1 {
-    font-size: 6rem;
+/* 400px */
+@media screen and (min-width: 25em) {
+  p {
+    font-size: 1rem;
   }
 
-  h1 + h2 {
-    font-size: 3rem;
+  .larger {
+    font-size: 1.125em;
   }
 }
 
 /* 640px */
 @media screen and (min-width: 40em) {
   h1 {
-    font-size: 7rem;
-  }
-
-  h1 + h2 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
 
   .content {
@@ -976,14 +967,21 @@ ul.iconized {
   }
 }
 
+/* 800px */
+@media screen and (min-width: 50em) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
 /* 960px */
 @media screen and (min-width: 60em) {
   h1 {
-    font-size: 4rem;
+    font-size: 3.25rem;
   }
 
-  h1 + h2 {
-    font-size: 4rem;
+  .larger {
+    font-size: 1.2em;
   }
 
   .content {
@@ -1018,12 +1016,15 @@ ul.iconized {
   }
 }
 
+/* 1120px */
+@media screen and (min-width: 70em) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
 /* 1280px */
 @media screen and (min-width: 80em) {
-  body {
-    font-size: 18px;
-  }
-
   .content {
     margin-left: 16.6667%;  /* 1/6 */
     margin-right: 16.6667%;
