@@ -3,27 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Fritz Lekschas">
-  <meta name="description" content="A new technique for interactively exploring and navigating large numbers of annotated patterns in multiscale visual spaces such as gigapixel images, matrices, or maps.">
+  <meta name="description" content="A technique for pattern-driven exploration of multiscale visualizations at scale supporting gigapixel images, matrices, or maps.">
   <meta name="keywords" content="Guided Navigation, Pattern Exploration, Multiscale Visualizations, Insets, Gigapixel Images, Maps, Genomics, Genome Interaction Matrices, Hi-C, 3D Genome, 4D Nucleome, 4DN">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content="Scalable Insets">
-  <meta itemprop="description" content="A new technique for interactively exploring and navigating large numbers of annotated patterns in multiscale visual spaces such as gigapixel images, matrices, or maps.">
+  <meta itemprop="description" content="A technique for pattern-driven exploration of multiscale visualizations at scale supporting gigapixel images, matrices, or maps.">
   <meta itemprop="image" content="http://scalable-insets.lekschas.de/images/teaser.jpg">
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@flekschas">
   <meta name="twitter:title" content="Scalable Insets">
-  <meta name="twitter:description" content="A new technique for interactively exploring and navigating large numbers of annotated patterns in multiscale visual spaces such as gigapixel images, matrices, or maps.">
+  <meta name="twitter:description" content="A technique for pattern-driven exploration of multiscale visualizations at scale supporting gigapixel images, matrices, or maps.">
   <meta name="twitter:creator" content="@flekschas">
   <!-- Twitter summary card with large image must be at least 280x150px -->
   <meta name="twitter:image:src" content="http://scalable-insets.lekschas.de/images/teaser.jpg">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Scalable Insets" />
-  <meta property="og:description" content="A new technique for interactively exploring and navigating large numbers of annotated patterns in multiscale visual spaces such as gigapixel images, matrices, or maps." />
+  <meta property="og:description" content="A technique for pattern-driven exploration of multiscale visualizations at scale supporting gigapixel images, matrices, or maps." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="http://scalable-insets.lekschas.de" />
   <meta property="og:image" content="http://scalable-insets.lekschas.de/images/teaser.jpg" />
@@ -81,7 +81,7 @@
         <span>Screencast &amp; Presentation</span>
       </h3>
       <div class="columns-2">
-        <div id="video" class="iframe-wrap">
+        <div id="video">
           <iframe
             class="full-wh"
             src="https://www.youtube.com/embed/7Bn4mNLl3WQ?rel=0&amp;showinfo=0"
@@ -89,7 +89,7 @@
             allowfullscreen>
           </iframe>
         </div>
-        <div id="slides" class="iframe-wrap">
+        <div id="slides">
           <iframe
             class="full-wh"
             src="//speakerdeck.com/player/267c2cbc1f0b451c977c6a03422a02e7"
@@ -137,7 +137,7 @@
 
         <div class="columns m-t-0-5 m-b-1">
           <p class="column-1-2">
-            Exploring visual details of these annotated patterns in multiscale visual spaces requires a tradeoff between several conflicting criteria (<a href="#fig-naive-approaches">Fig. 1</a>). Patterns must be visible for inspection and comparison (detail). Enough of the overview needs to be visible to provide context for the patterns (context). And the detailed pattern representations must be close to its actual position in the overview (locality).
+            Exploring visual details of these annotated patterns in multiscale visualizations requires a tradeoff between several conflicting criteria (<a href="#fig-naive-approaches">Fig. 1</a>). Patterns must be visible for inspection and comparison (detail). Enough of the overview needs to be visible to provide context for the patterns (context). And the detailed pattern representations must be close to its actual position in the overview (locality).
           </p>
 
           <p class="column-1-2">
@@ -156,7 +156,7 @@
 
         <div id="Technique" class="columns m-t-0-5 m-b-1">
           <p class="column-1-2">
-            <em>Scalable Insets</em> is a scalable visualization technique for interactively exploring and navigating large numbers of annotated patterns in multiscale visual spaces. Scalable Insets support users in early exploration through multifocus guidance by dynamically placing magnified thumbnails of annotated patterns as insets within the viewport (<a href="#fig-technique">Fig. 2</a>). The entire design (<a href="#fig-design">Fig. 3</a>) is focused on scalability. To keep the number of insets stable, we developed dynamic grouping to cluster patterns based on their location, type, and the user’s viewport.
+            <em>Scalable Insets</em> is a scalable visualization technique for interactively exploring and navigating large numbers of annotated patterns in multiscale visualizations. Scalable Insets support users in early exploration through multifocus guidance by dynamically placing magnified thumbnails of annotated patterns as insets within the viewport (<a href="#fig-technique">Fig. 2</a>). The entire design (<a href="#fig-design">Fig. 3</a>) is focused on scalability. To keep the number of insets stable, we developed dynamic grouping to cluster patterns based on their location, type, and the user’s viewport.
           </p>
 
           <p class="column-1-2">
@@ -202,7 +202,7 @@
       </h3>
       <ol id="publications" class="no-list-style">
         <li class="reference">
-          <p class="title"><a href="https://www.biorxiv.org/content/10.1101/301036v2" target="_blank">Pattern-Driven Navigation in 2D Multiscale Visualizations with Scalable Insets</a></p>
+          <p class="title"><a href="https://vcg.seas.harvard.edu/pubs/scalable-insets" target="_blank">Pattern-Driven Navigation in 2D Multiscale Visualizations with Scalable Insets</a></p>
           <div class="secondary-information">
             <ol class="no-list-style inline-list authors">
               <li>Fritz Lekschas</li>
@@ -212,11 +212,8 @@
               <li>Nils Gehlenborg</li>
               <li>Hanspeter Pfister</li>
             </ol>
-            <span class="journal">bioRxiv</span>, April 4, 2019.
-            <span class="doi"><abbr title="Digital Object Identifier">doi</abbr>: <a href="https://doi.org/10.1101/301036" target="_blank">10.1101/301036</a></span>
-            <ol class="no-list-style inline-list badges">
-              <li class="preprint">Preprint</li>
-            </ol>
+            <span class="journal">IEEE Transactions on Visualization and Computer Graphics</span> (InfoVis 19), 2019.
+            <span class="doi"><abbr title="Digital Object Identifier">doi</abbr>: <a href="https://doi.org/10.1109/TVCG.2019.2934555" target="_blank">10.1109/TVCG.2019.2934555</a></span>
           </div>
         </li>
       </ol>
@@ -239,14 +236,6 @@
       </h3>
       <p>All the code of Scalable Insets is publicly accessible and open-source.</p>
       <ul class="no-list-style large-spacing iconized">
-        <li class="iconized">
-          <svg class="icon">
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="images/icons.svg#github"></use>
-          </svg>
-          <a href="https://github.com/higlass/higlass" target="_blank">https://github.com/higlass/higlass</a>
-        </li>
         <li class="iconized">
           <svg class="icon">
             <use
@@ -285,7 +274,18 @@
               xmlns:xlink="http://www.w3.org/1999/xlink"
               xlink:href="images/icons.svg#github"></use>
           </svg>
-          <a href="https://github.com/higlass/higlass-server" target="_blank">https://github.com/higlass/higlass-server</a>
+          <a href="https://github.com/flekschas/image-tiles-to-sqlite" target="_blank">https://github.com/flekschas/image-tiles-to-sqlite</a>
+        </li>
+      </ul>
+      <p>You might also be interested in the following repositories as Scalable Insets is implemented as a plugin for HiGlass.</p>
+      <ul class="no-list-style large-spacing iconized">
+        <li class="iconized">
+          <svg class="icon">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="images/icons.svg#github"></use>
+          </svg>
+          <a href="https://github.com/higlass/higlass" target="_blank">https://github.com/higlass/higlass</a>
         </li>
         <li class="iconized">
           <svg class="icon">
@@ -293,7 +293,7 @@
               xmlns:xlink="http://www.w3.org/1999/xlink"
               xlink:href="images/icons.svg#github"></use>
           </svg>
-          <a href="https://github.com/flekschas/image-tiles-to-sqlite" target="_blank">https://github.com/flekschas/image-tiles-to-sqlite</a>
+          <a href="https://github.com/higlass/higlass-server" target="_blank">https://github.com/higlass/higlass-server</a>
         </li>
       </ul>
 
@@ -515,15 +515,15 @@
       <ol class="no-list-style large-spacing iconized">
         <li id="ref-1" class="flex-c reference">
           <span class="number">[1]</span>
-          <span class="flex-g-1">Dekker et al. (2017) The 4d nucleome project. <em>Nature</em>, 549, 219.</span>
+          <span class="flex-g-1"><a href="https://www.nature.com/articles/nature23884" target="_blank">Dekker et al. (2017) The 4d nucleome project. <em>Nature</em>, 549, 219.</a></span>
         </li>
         <li id="ref-2" class="flex-c reference">
           <span class="number">[2]</span>
-          <span class="flex-g-1">Pietriga et al. Exploratory visualization of astronomical data on ultra-high-resolution wall displays. <em>Proceedings SPIE</em>, 9913, 15.</span>
+          <span class="flex-g-1"><a href="https://spie.org/Publications/Proceedings/Paper/10.1117/12.2231191?SSO=1" target="_blank">Pietriga et al. Exploratory visualization of astronomical data on ultra-high-resolution wall displays. <em>Proceedings SPIE</em>, 9913, 15.</a></span>
         </li>
         <li id="ref-3" class="flex-c reference">
           <span class="number">[3]</span>
-          <span class="flex-g-1">Kerpedjiev et al. (2017) HiGlass: Web-based visual comparison and exploration of genome interaction maps. <em>bioRxiv</em>.</span>
+          <span class="flex-g-1"><a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1486-1" target="_blank">Kerpedjiev et al. (2018) HiGlass: web-based visual exploration and analysis of genome interaction maps. <em>Genome Biology</em>, 19, 125.</a></span>
         </li>
       </ol>
     </div>

@@ -170,7 +170,7 @@ section.text {
   overflow: auto;
 
   figure {
-    margin: 2em 3em;
+    margin: 3em 3em;
     padding: 0;
 
     figcaption {
@@ -586,6 +586,10 @@ ul.iconized {
 
 .journal {
   font-style: italic;
+}
+
+.columns {
+  overflow: auto;
 }
 
 .columns-2 {
