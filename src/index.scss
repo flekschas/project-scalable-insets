@@ -619,6 +619,21 @@ ul.iconized {
   width: 100%;
 }
 
+.video-slides-wrapper {
+  background: $gray-lightest;
+  box-shadow: 0 0 0 2px $gray-lightest;
+  border-radius: 0.5rem;
+
+  h4 {
+    margin: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+.video, .slides {
+  @include ratio(3840, 2145);
+}
+
 /*
  * -----------------------------------------------------------------------------
  * Specific styles, i.e. IDs
@@ -927,10 +942,6 @@ ul.iconized {
       }
     }
   }
-}
-
-#video, #slides {
-  @include ratio(3840, 2145);
 }
 
 /*
